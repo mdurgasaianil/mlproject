@@ -1,6 +1,8 @@
 import sys # python function provides various functions and variables that are used to manipulate different parts of the python runtime.
 # sys library will conains the information of exception content.
 
+from src.logger import logging
+
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb = error_detail.exc_info() # this funcion will give you details like on which file and which line etc.. the exception occured.
     file_name = exc_tb.tb_frame.f_code.co_filename
@@ -21,4 +23,5 @@ class CustomException(Exception):
 #     try:
 #         a=1/0
 #     except Exception as e:
+#         logging.info(str(e))
 #         raise CustomException(e,sys)
